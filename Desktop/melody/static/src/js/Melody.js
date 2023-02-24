@@ -12,6 +12,7 @@ var audioContext //audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 var pauseButton = document.getElementById("pauseButton");
+var constraints = { audio: true, video:false }
 
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
@@ -26,8 +27,6 @@ function startRecording() {
         https://addpipe.com/blog/audio-constraints-getusermedia/
     */
 
-    var constraints = { audio: true, video:false }
-
     /*
         Disable the record button until we get a success or fail from getUserMedia() 
     */
@@ -41,7 +40,7 @@ function startRecording() {
         https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
     */
     console.log('constraints', constraints)
-    MediaDevices.getUserMedia(constraints).then(function(stream) {
+    navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
         console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
         /*

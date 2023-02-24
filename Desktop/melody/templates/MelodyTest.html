@@ -97,14 +97,17 @@
     <div class="recordname">
     <p id="recordingsName"></p>
     </div>
+
+    <form action="/ResultPage" method="POST"  enctype="multipart/form-data">
+        <input type="file" name ="recorded">
+        <br>
+        <button type="submit">업로드</button>
+    </form>
     
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="/static/src/js/Melody.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <div class="btn">
-        <button class="btn btn-primary" type="button" onClick="location.href='ResultPage.html'">Result</button>
-    </div>
   </body>
 </html>
 
